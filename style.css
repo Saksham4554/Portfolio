@@ -751,6 +751,12 @@ img{display:block;max-width:100%}
   border:1px solid var(--border);
   transition:border-color var(--t),box-shadow var(--t),transform var(--t);
 }
+.skill-card i {
+  font-size: 44px;
+  margin: 0 auto 10px;
+  display: block;
+  transition: transform 0.3s;
+}
 .sk-glow{
   position:absolute;inset:0;
   background:radial-gradient(circle at center,rgba(0,245,212,0.1),transparent 65%);
