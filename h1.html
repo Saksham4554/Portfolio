@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saksham's — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Jost:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader" class="loader">
+    <div class="loader-orbital">
+      <div class="orbital-ring ring-a"></div>
+      <div class="orbital-ring ring-b"></div>
+      <div class="orbital-ring ring-c"></div>
+      <div class="loader-core"><span>SK</span></div>
+    </div>
+    <div class="loader-bottom">
+      <span class="loader-label">Initializing</span>
+      <div class="loader-bar">
+        <div class="loader-fill" id="loaderFill"></div>
+      </div>
+      <span class="loader-pct" id="loaderPct">0%</span>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cur-dot" id="curDot"></div>
+  <div class="cur-ring" id="curRing"></div>
+
+  <!-- CANVAS -->
+  <canvas id="neuralCanvas"></canvas>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <!-- LEFT -->
+      <a class="nav-logo" href="#hero">SK<span>.</span></a>
+
+      <!-- CENTER -->
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- RIGHT -->
+      <div class="nav-right">
+        <!-- THEME BUTTON -->
+        <div class="theme-dropdown">
+          <div class="theme-selected" id="themeSelected">🎨 Default Blue</div>
+          <div class="theme-options" id="themeOptions">
+            <div data-value="default">Default Blue</div>
+            <div data-value="neon">Neon Green</div>
+            <div data-value="purple">Purple Pink</div>
+            <div data-value="gold">Gold Luxury</div>
+            <div data-value="red">Red Dark</div>
+            <div data-value="teal">Teal Clean</div>
+          </div>
+        </div>
+
+        <!-- RESUME -->
+        <a href="CV.pdf" download class="nav-cta mag-btn">
+          <span>Resume</span>
+        </a>
+        <div class="nav-burger" id="navBurger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul>
+      <li><a href="#about" onclick="closeDrawer()">About</a></li>
+      <li><a href="#skills" onclick="closeDrawer()">Skills</a></li>
+      <li><a href="#projects" onclick="closeDrawer()">Projects</a></li>
+      <li><a href="#education" onclick="closeDrawer()">Education</a></li>
+      <li><a href="#certifications" onclick="closeDrawer()">Certifications</a></li>
+      <li><a href="#achievements" onclick="closeDrawer()">Achievements</a></li>
+      <li><a href="#contact" onclick="closeDrawer()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Available for Opportunities</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="line-wrap"><span class="reveal-line">Saksham</span></span>
+        </h1>
+        <div class="hero-role-wrap">
+          <span class="role-prefix">I am a&nbsp;</span>
+          <span class="hero-typing" id="heroTyping"></span>
+          <span class="typing-cur">|</span>
+        </div>
+        <p class="hero-bio">
+          Crafting intelligent systems from raw data. Passionate about
+          Machine Learning, Data Analysis, and building things that matter.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary mag-btn">
+            <span>View Projects</span><i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="cv.pdf" download class="btn-ghost mag-btn">
+            <i class="fas fa-download"></i><span>Resume</span>
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/Saksham4554" target="_blank" class="social-pill mag-btn">
+            <i class="fab fa-github"></i><span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/itssaksham" target="_blank" class="social-pill mag-btn">
+            <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+          </a>
+          <a href="mailto:sakshamjaggi76@gmail.com" class="social-pill mag-btn">
+            <i class="fas fa-envelope"></i><span>Email</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card-wrap" id="heroCardWrap">
+        <div class="hero-card" id="heroCard">
+          <div class="profile-ring-outer"></div>
+          <div class="profile-ring-inner"></div>
+          <div class="profile-img-wrap">
+            <img src="photo.jpeg" alt="Saksham Kumar" class="profile-img" />
+          </div>
+          <div class="hud hud-tl">
+            <span class="hud-label">Status</span>
+            <span class="hud-val hud-green">● Active</span>
+          </div>
+          <div class="hud hud-br">
+            <span class="hud-label">Focus</span>
+            <span class="hud-val">ML / Data</span>
+          </div>
+        </div>
+        <div class="stat-badge badge-p">
+          <i class="fas fa-cube"></i>
+          <div><strong>3+</strong><span>Projects</span></div>
+        </div>
+        <div class="stat-badge badge-s">
+          <i class="fas fa-brain"></i>
+          <div><strong>10+</strong><span>Skills</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section rs">
+    <div class="container">
+      <div class="sec-label"><span>01</span> About Me</div>
+      <h2 class="sec-heading">Who Am I <em>?</em></h2>
+      <div class="about-grid">
+        <div class="glass-card tilt-card about-bio-card">
+          <div class="card-glow"></div>
+          <p class="about-lead">
+            I'm a <span class="hl">Computer Science & Engineering</span> student at
+            Lovely Professional University, focused on turning raw data into
+            meaningful insights and intelligent systems.
+          </p>
+
+          <p class="about-body">
+            I specialize in Machine Learning, Data Analysis, and building predictive models
+            that solve real-world problems. My work includes developing ML systems
+            like Parkinson’s Disease prediction and data-driven dashboards using
+            tools like Python, Pandas, and Power BI.
+          </p>
+
+          <p class="about-body">
+            I enjoy exploring data, uncovering patterns, and transforming complex
+            information into simple, actionable solutions. Constant learning and
+            problem-solving drive my growth as a future data professional.
+          </p>
+
+          <div class="about-goal">
+            <i class="fas fa-crosshairs"></i>
+            <span>Goal: <em>Data Analyst / ML Engineer at a product-focused company</em></span>
+          </div>
+        </div>
+
+        <div class="about-right">
+          <div class="about-stats">
+            <div class="stat-box glass-card tilt-card">
+              <span class="stat-num">LPU</span>
+              <span class="stat-lbl">University</span>
+            </div>
+            <div class="stat-box glass-card tilt-card">
+              <span class="stat-num" data-count="8.13">0</span>
+              <span class="stat-lbl">CGPA</span>
+            </div>
+            <div class="stat-box glass-card tilt-card">
+              <span class="stat-num" data-count="3">0</span>
+              <span class="stat-lbl">Projects</span>
+            </div>
+          </div>
+
+          <div class="glass-card tilt-card training-card">
+            <div class="training-badge">
+              <i class="fas fa-flask"></i> Summer Training
+            </div>
+            <h4>Lovely Professional University</h4>
+            <span class="training-date"><i class="far fa-calendar"></i> June – July 2025</span>
+            <ul class="training-list">
+              <li>EDA techniques on complex datasets</li>
+              <li>ML model building & evaluation</li>
+              <li>Feature engineering & preprocessing</li>
+              <li>Data visualization & reporting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section rs">
+    <div class="container">
+      <div class="sec-label"><span>02</span> Skills</div>
+      <h2 class="sec-heading">My <em>Arsenal</em></h2>
+      <div class="skill-filter">
+        <button class="sf-btn active" data-filter="all">All</button>
+        <button class="sf-btn" data-filter="lang">Languages</button>
+        <button class="sf-btn" data-filter="data">Data Science</button>
+        <button class="sf-btn" data-filter="tools">Tools</button>
+        <button class="sf-btn" data-filter="soft">Soft Skills</button>
+      </div>
+      <div class="skills-grid" id="skillsGrid">
+        <div class="skill-card tilt-card" data-cat="lang">
+          <div class="sk-glow"></div><img src="Python logo.png" alt="Python" /><span>Python</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="lang">
+          <div class="sk-glow"></div><img src="cpp logo.png" alt="C++" /><span>C++</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="lang">
+          <div class="sk-glow"></div><img src="java logo.png" alt="Java" /><span>Java</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="data">
+          <div class="sk-glow"></div><img src="numpy logo.png" alt="NumPy" /><span>NumPy</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="data">
+          <div class="sk-glow"></div><img src="pandas logo.png" alt="Pandas" /><span>Pandas</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="data">
+          <div class="sk-glow"></div><img src="matplotlib logo.png" alt="Matplotlib" /><span>Matplotlib</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="data">
+          <div class="sk-glow"></div><img src="seaborn logo.png" alt="Seaborn" /><span>Seaborn</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="tools">
+          <div class="sk-glow"></div><img src="my sql logo.png" alt="MySQL" /><span>MySQL</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="tools">
+          <div class="sk-glow"></div><img src="power bi logo.png" alt="Power BI" /><span>Power BI</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="tools">
+          <div class="sk-glow"></div><img src="git logo.png" alt="Git" /><span>Git</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="tools">
+          <div class="sk-glow"></div><img src="github logo.png" alt="GitHub" /><span>GitHub</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="soft">
+          <div class="sk-glow"></div><img src="probelm solving logo.png" alt="Problem Solving" /><span>Problem
+            Solving</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="soft">
+          <div class="sk-glow"></div><img src="time management logo.png" alt="Time Mgmt" /><span>Time Management</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="soft">
+          <div class="sk-glow"></div><img src="communication logo.jpg" alt="Communication" /><span>Communication</span>
+        </div>
+        <div class="skill-card tilt-card" data-cat="soft">
+          <div class="sk-glow"></div><img src="adaptability logo.png" alt="Adaptability" /><span>Adaptability</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section rs">
+    <div class="container">
+      <div class="sec-label"><span>03</span> Projects</div>
+      <h2 class="sec-heading">Featured <em>Work</em></h2>
+      <p class="sec-sub">Handcrafted solutions at the intersection of data and intelligence.</p>
+      <div class="projects-grid">
+
+        <article class="proj-card tilt-card">
+          <div class="proj-shimmer"></div>
+          <div class="proj-img-wrap">
+            <img src="project1.png" alt="Parkinson's" class="proj-img" />
+            <div class="proj-overlay">
+              <a href="https://parkinson-disease-detecting-system.streamlit.app/" class="ov-btn mag-btn"><i class="fas fa-eye"></i> Preview</a>
+              <a href="https://github.com/Saksham4554/Parkinson-Disease-Detecting-System" class="ov-btn mag-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+            <span class="proj-num">01</span>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="tag tag-c">Python</span>
+              <span class="tag tag-v">Numpy</span>
+              <span class="tag tag-b">ML</span>
+              <span class="tag tag-m">SVM</span>
+            </div>
+            <h3>Parkinson's Disease Prediction</h3>
+            <p>SVM-powered ML system for early Parkinson's detection using biomedical voice biomarkers. Achieved 92%
+              accuracy through feature engineering and hyperparameter tuning.</p>
+            <div class="proj-metrics">
+              <div class="metric"><span class="mval">92%</span><span class="mkey">Accuracy</span></div>
+              <div class="metric"><span class="mval">195</span><span class="mkey">Samples</span></div>
+              <div class="metric"><span class="mval">SVM</span><span class="mkey">Model</span></div>
+            </div>
+            <button class="expand-btn" onclick="toggleExpand(this)"><span>View Details</span><i
+                class="fas fa-chevron-down"></i></button>
+            <div class="proj-detail">
+              <ul>
+                <li>Preprocessed UCI biomedical voice measurements dataset</li>
+                <li>Feature selection — top 10 vocal features identified</li>
+                <li>Tuned SVM with RBF kernel via cross-validation</li>
+                <li>Confusion matrix + ROC curve visualization</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj-card tilt-card">
+          <div class="proj-shimmer"></div>
+          <div class="proj-img-wrap">
+            <img src="coding logo.jpg" alt="Loan Prediction" class="proj-img" />
+            <div class="proj-overlay">
+              <a href="https://github.com/Saksham4554/Loan-Status-Predicting-System" class="ov-btn mag-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+            <span class="proj-num">02</span>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="tag tag-c">Python</span>
+              <span class="tag tag-v">Pandas</span>
+              <span class="tag tag-b">ML</span>
+              <span class="tag tag-m">RandomForest</span>
+            </div>
+            <h3>Loan Status Predicting System</h3>
+            <p>Intelligent loan approval predictor using demographic and financial features, helping institutions make
+              data-driven credit decisions with 87% accuracy.</p>
+            <div class="proj-metrics">
+              <div class="metric"><span class="mval">87%</span><span class="mkey">Accuracy</span></div>
+              <div class="metric"><span class="mval">8</span><span class="mkey">Features</span></div>
+              <div class="metric"><span class="mval">RF</span><span class="mkey">Model</span></div>
+            </div>
+            <button class="expand-btn" onclick="toggleExpand(this)"><span>View Details</span><i
+                class="fas fa-chevron-down"></i></button>
+            <div class="proj-detail">
+              <ul>
+                <li>Features: income, credit history, family size, loan amount</li>
+                <li>Class imbalance handled with SMOTE oversampling</li>
+                <li>Feature importance via SHAP values analysis</li>
+                <li>Interactive prediction dashboard</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj-card tilt-card">
+          <div class="proj-shimmer"></div>
+          <div class="proj-img-wrap">
+            <img src="project2.png" alt="Sales Dashboard" class="proj-img" />
+            <div class="proj-overlay">
+              <a href="https://github.com/Saksham4554/Fruit-Price-And-Arrival-Analysis-Dashboard" class="ov-btn mag-btn"><i class="fab fa-github"></i> Code</a>
+            </div>
+            <span class="proj-num">03</span>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span class="tag tag-c">Power BI</span>
+              <span class="tag tag-v">DAX Query</span>
+              <span class="tag tag-b">Dashboard</span>
+            </div>
+            <h3>Fruit Sales Analysis Dashboard</h3>
+            <p>Interactive sales intelligence dashboard uncovering revenue trends, seasonal patterns, and top-performing
+              SKUs across multiple product categories.</p>
+            <div class="proj-metrics">
+              <div class="metric"><span class="mval">12</span><span class="mkey">Categories</span></div>
+              <div class="metric"><span class="mval">5</span><span class="mkey">KPIs</span></div>
+              <div class="metric"><span class="mval">DAX</span><span class="mkey">Engine</span></div>
+            </div>
+            <button class="expand-btn" onclick="toggleExpand(this)"><span>View Details</span><i
+                class="fas fa-chevron-down"></i></button>
+            <div class="proj-detail">
+              <ul>
+                <li>Power Pivot data model with relational tables</li>
+                <li>Dynamic slicers for time, region, and product</li>
+                <li>Sales trend & YoY growth visualizations</li>
+                <li>Top 3 products driving 60% of total revenue</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== EDUCATION ===== -->
+   <section id="education" class="section rs">
+  <div class="container">
+    <div class="sec-label"><span>04</span> Education</div>
+    <h2 class="sec-heading">My <em>Journey</em></h2>
+
+    <div class="edu-timeline">
+      <div class="tl-track"></div>
+
+      <!-- ================= B.TECH ================= -->
+      <div class="tl-item tilt-card">
+        <div class="tl-dot"><i class="fas fa-university"></i></div>
+
+        <div class="tl-card glass-card">
+          <div class="tl-header">
+            <div class="tl-left">
+              <div class="tl-date">2023 – 2027</div>
+              <h3>B.Tech — Computer Science & Engineering</h3>
+              <p>Lovely Professional University</p>
+            </div>
+
+            <div class="tl-cgpa">
+              <span class="cgpa-label">CGPA</span>
+              <span class="cgpa-value">8.13</span>
+            </div>
+          </div>
+
+          <div class="tl-chips">
+            <span>Data Structures</span>
+            <span>Machine Learning</span>
+            <span>Databases</span>
+            <span>Algorithms</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 12th ================= -->
+      <div class="tl-item tilt-card">
+        <div class="tl-dot"><i class="fas fa-flask"></i></div>
+
+        <div class="tl-card glass-card">
+          <div class="tl-header">
+            <div class="tl-left">
+              <div class="tl-date">2022 – 2023</div>
+              <h3>Senior Secondary</h3>
+              <p>DAV Public School</p>
+            </div>
+
+            <div class="tl-cgpa">
+              <span class="cgpa-label">Percentage</span>
+              <span class="cgpa-value">78%</span>
+            </div>
+          </div>
+
+          <div class="tl-chips">
+            <span>Physics</span>
+            <span>Chemistry</span>
+            <span>Math</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 10th ================= -->
+      <div class="tl-item tilt-card">
+        <div class="tl-dot"><i class="fas fa-school"></i></div>
+
+        <div class="tl-card glass-card">
+          <div class="tl-header">
+            <div class="tl-left">
+              <div class="tl-date">2020 – 2021</div>
+              <h3>Matriculation</h3>
+              <p>DAV Public School</p>
+            </div>
+
+            <div class="tl-cgpa">
+              <span class="cgpa-label">Percentage</span>
+              <span class="cgpa-value">84%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <section id="certifications" class="section rs">
+    <div class="container">
+      <div class="sec-label"><span>05</span> Certifications</div>
+      <h2 class="sec-heading">My <em>Certifications</em></h2>
+      <div class="certs-grid">
+        <div class="cert-card glass-card tilt-card">
+          <div class="cert-ico"><i class="fas fa-award"></i></div>
+          <div>
+            <h4>Chat GPT-4 Prompt Engineering</h4><span>Infosys</span>
+          </div>
+          <a href="https://drive.google.com/file/d/10uJMGgNkPgM6-OfePNXrk5P2j8QqbAK-/view?usp=drive_link" target="_blank" class="cert-link">
+            <i class="fas fa-paperclip"></i>
+          </a>
+        </div>
+        <div class="cert-card glass-card tilt-card">
+          <div class="cert-ico"><i class="fas fa-award"></i></div>
+          <div>
+            <h4>Job Ready Data Science Course</h4><span>CodeWithHarry</span>
+          </div>
+          <a href="https://www.codewithharry.com/courses/the-ultimate-job-ready-data-science-course/certificate" target="_blank" class="cert-link">
+            <i class="fas fa-paperclip"></i>
+          </a>
+        </div>
+        <div class="cert-card glass-card tilt-card">
+          <div class="cert-ico"><i class="fas fa-award"></i></div>
+          <div>
+            <h4>Cloud Computing</h4><span>NPTEL</span>
+          </div>
+          <a href="https://drive.google.com/file/d/1mijAMKNqaIlXPUXx61HB1lI5McPPQMR5/view?usp=drive_link" target="_blank" class="cert-link">
+            <i class="fas fa-paperclip"></i>
+          </a>
+        </div>
+        <div class="cert-card glass-card tilt-card">
+          <div class="cert-ico"><i class="fas fa-award"></i></div>
+          <div>
+            <h4>TCP/IP Advance Topics</h4><span>Coursera</span>
+          </div>
+          <a href="https://www.coursera.org/account/accomplishments/certificate/TFROQSYIRJFO" target="_blank" class="cert-link">
+            <i class="fas fa-paperclip"></i>
+          </a>
+        </div>
+        <div class="cert-card glass-card tilt-card">
+          <div class="cert-ico"><i class="fas fa-award"></i></div>
+          <div>
+            <h4>Computational Therory</h4><span>Infosys</span>
+          </div>
+          <a href="https://drive.google.com/file/d/1P87FaXFGQHtKaIEHoDkEy08GivmBHT7C/view?usp=drive_link" target="_blank" class="cert-link">
+            <i class="fas fa-paperclip"></i>
+          </a>
+        </div>
+        <div class="cert-card glass-card tilt-card">
+          <div class="cert-ico"><i class="fas fa-award"></i></div>
+          <div>
+            <h4>Packet Switching Networks And Algorithms</h4><span>Coursera</span>
+          </div>
+          <a href="https://www.coursera.org/account/accomplishments/certificate/KQ9YZKR867O7" target="_blank" class="cert-link">
+            <i class="fas fa-paperclip"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <section id="achievements" class="section rs">
+    <div class="container">
+      <div class="sec-label"><span>06</span> Achievements</div>
+      <h2 class="sec-heading">My <em>Achievements</em></h2>
+      <div class="ach-grid">
+        <div class="ach-card glass-card tilt-card">
+          <div class="ach-ico"><i class="fas fa-trophy"></i></div>
+          <div>
+            <h4>Secured 92 Percentile</h4>
+            <p>In Coding Competetion conducted by naukri.com</p>
+          </div>
+        </div>
+        <div class="ach-card glass-card tilt-card">
+          <div class="ach-ico"><i class="fas fa-code"></i></div>
+          <div>
+            <h4>140+ Question Solved</h4>
+            <p>On Leetcode</p>
+          </div>
+        </div>
+        <div class="ach-card glass-card tilt-card">
+          <div class="ach-ico"><i class="fas fa-chart-bar"></i></div>
+          <div>
+            <h4>2nd Rank</h4>
+            <p>In Vedic Maths Competetion</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section rs">
+    <div class="container">
+      <div class="sec-label"><span>07</span> Contact</div>
+      <h2 class="sec-heading">Let's <em>Connect</em></h2>
+      <div class="contact-layout">
+        <div class="contact-info">
+          <p class="contact-pitch">
+            Whether it's a data project, internship opportunity, or just a good
+            conversation about ML — I'm all ears. Let's build something great.
+          </p>
+          <div class="c-links">
+            <a href="mailto:sakshamjaggi76@gmail.com" class="c-link glass-card mag-btn">
+              <div class="c-ico"><i class="fas fa-envelope"></i></div>
+              <div><span class="c-lbl">Email</span><span class="c-val">sakshamjaggi76@gmail.com</span></div>
+              <i class="fas fa-arrow-right c-arr"></i>
+            </a>
+            <a href="https://github.com/Saksham4554" target="_blank" class="c-link glass-card mag-btn">
+              <div class="c-ico"><i class="fab fa-github"></i></div>
+              <div><span class="c-lbl">GitHub</span><span class="c-val">https://github.com/Saksham4554</span></div>
+              <i class="fas fa-arrow-right c-arr"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/itssaksham" target="_blank" class="c-link glass-card mag-btn">
+              <div class="c-ico"><i class="fab fa-linkedin"></i></div>
+              <div><span class="c-lbl">LinkedIn</span><span class="c-val">https://www.linkedin.com/in/itssaksham</span></div>
+              <i class="fas fa-arrow-right c-arr"></i>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form glass-card" id="contactForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your Name" required />
+            </div>
+            <div class="form-field">
+              <label>Email</label>
+              <input type="email" placeholder="you@email.com" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Subject</label>
+            <input type="text" placeholder="Project collaboration, internship..." />
+          </div>
+          <div class="form-field">
+            <label>Message</label>
+            <textarea placeholder="Tell me what you have in mind..." rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn-primary mag-btn form-submit">
+            <span>Send Message</span><i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">SK<span>.</span></div>
+      <p>© 2026 Saksham Kumar · Built with passion and creativity.</p>
+      <div class="footer-soc">
+        <a href="https://github.com/Saksham4554"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/itssaksham"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="j1.js"></script>
+</body>
+
+</html>
