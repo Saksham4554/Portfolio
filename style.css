@@ -43,7 +43,11 @@
   border-radius: 50%;
   margin-right: 8px;
 }
-
+body.light .reveal-line {
+  background: linear-gradient(135deg, var(--cyan), var(--violet));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 body.light .navbar {
   background: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -132,6 +136,24 @@ body.light .tag-v {
 body.light .tag-b {
   background: rgba(37, 99, 235, 0.1);
   color: #1d4ed8;
+}
+body.light .theme-options {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light .theme-options div {
+  color: #334155;
+}
+
+body.light .theme-options div:hover {
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+}
+body.light .theme-selected {
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .tl-loc {
   font-size: 13px;
@@ -783,10 +805,9 @@ body.light .hud-green {
 
 .reveal-line {
   display: block;
-  background: linear-gradient(135deg, var(--text), 40%, rgba(0, 245, 212, 0.7));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #ffffff, var(--cyan));
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   transform: translateY(100%);
   opacity: 0;
   animation: revealUp 0.9s var(--ease) 0.8s forwards;
