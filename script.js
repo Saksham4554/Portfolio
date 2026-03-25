@@ -22,7 +22,54 @@ document.addEventListener("DOMContentLoaded", () => {
     pct.innerText = Math.floor(progress) + "%";
   }, 200);
 
+const modeToggle = document.getElementById("modeToggle");
 
+let isLight = localStorage.getItem("mode") === "light";
+
+function applyMode() {
+
+  if (isLight) {
+    document.body.classList.add("light");
+    document.documentElement.style.setProperty("--bg", "#f8fafc");
+    document.documentElement.style.setProperty("--bg2", "#ffffff");
+
+    document.documentElement.style.setProperty("--text", "#0f172a");
+    document.documentElement.style.setProperty("--muted", "#475569");
+
+    document.documentElement.style.setProperty("--border", "rgba(0,0,0,0.08)");
+    document.documentElement.style.setProperty("--glass", "rgba(255,255,255,0.7)");
+    document.documentElement.style.setProperty("--glass-b", "rgba(0,0,0,0.08)");
+
+    document.documentElement.style.setProperty("--card-glow-c", "rgba(0,0,0,0.04)");
+    document.documentElement.style.setProperty("--card-glow-v", "rgba(0,0,0,0.06)");
+
+    modeToggle.innerText = "☀️";
+  } else {
+    document.body.classList.remove("light");
+    document.documentElement.style.setProperty("--bg", "#030014");
+    document.documentElement.style.setProperty("--bg2", "#070620");
+
+    document.documentElement.style.setProperty("--text", "#e2e8f0");
+    document.documentElement.style.setProperty("--muted", "#64748b");
+
+    document.documentElement.style.setProperty("--border", "rgba(255,255,255,0.07)");
+    document.documentElement.style.setProperty("--glass", "rgba(255,255,255,0.04)");
+    document.documentElement.style.setProperty("--glass-b", "rgba(255,255,255,0.08)");
+
+    document.documentElement.style.setProperty("--card-glow-c", "rgba(0,245,212,0.12)");
+    document.documentElement.style.setProperty("--card-glow-v", "rgba(124,58,237,0.15)");
+
+    modeToggle.innerText = "🌙";
+  }
+}
+
+applyMode();
+
+modeToggle.addEventListener("click", () => {
+  isLight = !isLight;
+  localStorage.setItem("mode", isLight ? "light" : "dark");
+  applyMode();
+});
   /* ================= CUSTOM CURSOR ================= */
   const dot = document.getElementById("curDot");
   const ring = document.getElementById("curRing");
@@ -279,7 +326,7 @@ setTimeout(runCounter, 1000);
         const value = option.getAttribute("data-value");
         const text = option.innerText;
 
-        themeSelected.innerText = "🎨 " + text;
+        themeSelected.innerText =text;
         themeOptions.style.display = "none";
 
         applyTheme(value);
@@ -300,7 +347,7 @@ setTimeout(runCounter, 1000);
 
     if (savedTheme && themes[savedTheme]) {
       applyTheme(savedTheme);
-      themeSelected.innerText = "🎨 " + labelMap[savedTheme];
+      themeSelected.innerText =labelMap[savedTheme];
     }
 
     document.addEventListener("click", (e) => {
