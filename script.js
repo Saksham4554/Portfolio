@@ -297,12 +297,12 @@ setTimeout(runCounter, 1000);
   const themeOptions = document.getElementById("themeOptions");
 
   const themes = {
-    default: {"--bg":"#030014","--cyan":"#00f5d4","--violet":"#7c3aed","--blue":"#2563eb","--text":"#e2e8f0"},
-    neon: {"--bg":"#020403","--cyan":"#00ff9f","--violet":"#00c853","--blue":"#00ff9f","--text":"#eafff6"},
-    purple: {"--bg":"#0a0014","--cyan":"#ff4ecd","--violet":"#7c3aed","--blue":"#a855f7","--text":"#f3e8ff"},
-    gold: {"--bg":"#0b0b0b","--cyan":"#ffb703","--violet":"#fb8500","--blue":"#ffb703","--text":"#fff6e0"},
-    red: {"--bg":"#050000","--cyan":"#ff3b3b","--violet":"#ff0000","--blue":"#ff4d4d","--text":"#ffe5e5"},
-    teal: {"--bg":"#020617","--cyan":"#14b8a6","--violet":"#0ea5e9","--blue":"#22d3ee","--text":"#e0f2fe"}
+    default: {"--cyan":"#00f5d4","--violet":"#7c3aed","--blue":"#2563eb"},
+    neon: {"--cyan":"#00ff9f","--violet":"#00c853","--blue":"#00ff9f"},
+    purple: {"--cyan":"#ff4ecd","--violet":"#7c3aed","--blue":"#a855f7"},
+    gold: {"--cyan":"#ffb703","--violet":"#fb8500","--blue":"#ffb703"},
+    red: {"--cyan":"#ff3b3b","--violet":"#ff0000","--blue":"#ff4d4d"},
+    teal: {"--cyan":"#14b8a6","--violet":"#0ea5e9","--blue":"#22d3ee"}
   };
 
   function applyTheme(themeName) {
@@ -312,6 +312,11 @@ setTimeout(runCounter, 1000);
     for (let key in selectedTheme) {
       document.documentElement.style.setProperty(key, selectedTheme[key]);
     }
+  }
+  if (isLight) {
+    document.body.classList.add("light");
+  } else {
+    document.body.classList.remove("light");
   }
 
   if (themeSelected && themeOptions) {
