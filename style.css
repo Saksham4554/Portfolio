@@ -246,6 +246,8 @@ body.light .tl-loc {
   background: rgba(0, 245, 212, 0.08);
   color: var(--cyan);
 }
+
+/* ──────────────────── RESET ──────────────────── */
 *,
 *::before,
 *::after {
@@ -2432,18 +2434,58 @@ body.light .hud-green {
 
 @media(max-width:768px) {
   .section {
-    padding: 90px 5%
+    padding: 60px 15%;
   }
 
   .navbar {
-    top: 12px;
-    width: calc(100% - 24px)
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .nav-container {
+    padding: 12px 16px;
+  }
+
+  .nav-links {
+    display: none; /* keep only burger */
+    position: static;
+    transform: none;
   }
 
   .hero {
     padding: 0 5%
   }
+  .hero-inner {
+    gap: 30px;
+    padding-top: 80px;
+  }
 
+  .hero-name {
+    font-size: 36px;
+  }
+
+  .hero-bio {
+    font-size: 14px;
+  }
+  .nav-right {
+    gap: 8px;
+  }
+
+  .theme-dropdown {
+    top: auto;
+    right: auto;
+  }
+
+  .theme-selected {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .mode-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
   .about-stats {
     grid-template-columns: repeat(3, 1fr)
   }
@@ -2453,8 +2495,13 @@ body.light .hud-green {
   }
 
   .hero-card {
-    width: 260px;
-    height: 320px
+    width: 220px;
+    height: 280px;
+  }
+
+  .profile-img-wrap {
+    width: 120px;
+    height: 120px;
   }
 
   .profile-ring-outer {
@@ -2487,7 +2534,7 @@ body.light .hud-green {
 
 @media(max-width:480px) {
   .skills-grid {
-    grid-template-columns: repeat(3, 1fr)
+    grid-template-columns: repeat(2, 1fr)
   }
 
   .about-stats {
