@@ -59,21 +59,24 @@
 
       <!-- RIGHT -->
       <div class="nav-right">
+        <button id="modeToggle" class="mode-btn">
+          🌙
+        </button>
         <!-- THEME BUTTON -->
         <div class="theme-dropdown">
-          <div class="theme-selected" id="themeSelected">🎨 Default Blue</div>
+          <div class="theme-selected" id="themeSelected">Default Blue</div>
           <div class="theme-options" id="themeOptions">
-            <div data-value="default">Default Blue</div>
-            <div data-value="neon">Neon Green</div>
-            <div data-value="purple">Purple Pink</div>
-            <div data-value="gold">Gold Luxury</div>
-            <div data-value="red">Red Dark</div>
-            <div data-value="teal">Teal Clean</div>
+            <div data-value="default"><span class="color-dot" style="background:#2563eb"></span> Default Blue</div>
+            <div data-value="neon"><span class="color-dot" style="background:#00ff9f"></span> Neon Green</div>
+            <div data-value="purple"><span class="color-dot" style="background:#a855f7"></span> Purple Pink</div>
+            <div data-value="gold"><span class="color-dot" style="background:#ffb703"></span> Gold Luxury</div>
+            <div data-value="red"><span class="color-dot" style="background:#ff3b3b"></span> Red Dark</div>
+            <div data-value="teal"><span class="color-dot" style="background:#14b8a6"></span> Teal Clean</div>
           </div>
         </div>
 
         <!-- RESUME -->
-        <a href="CV.pdf" download class="btn-ghost mag-btn">
+        <a href="CV.pdf" download class="nav-cta mag-btn">
           <span>Resume</span>
         </a>
         <div class="nav-burger" id="navBurger">
@@ -125,7 +128,7 @@
           <a href="#projects" class="btn-primary mag-btn">
             <span>View Projects</span><i class="fas fa-arrow-right"></i>
           </a>
-          <a href="CV.pdf" download class="btn-ghost mag-btn">
+          <a href="cv.pdf" download class="btn-ghost mag-btn">
             <i class="fas fa-download"></i><span>Resume</span>
           </a>
         </div>
@@ -323,8 +326,10 @@
           <div class="proj-img-wrap">
             <img src="project1.png" alt="Parkinson's" class="proj-img" />
             <div class="proj-overlay">
-              <a href="https://parkinson-disease-detecting-system.streamlit.app/" class="ov-btn mag-btn"><i class="fas fa-eye"></i> Preview</a>
-              <a href="https://github.com/Saksham4554/Parkinson-Disease-Detecting-System" class="ov-btn mag-btn"><i class="fab fa-github"></i> Code</a>
+              <a href="https://parkinson-disease-detecting-system.streamlit.app/" class="ov-btn mag-btn"><i
+                  class="fas fa-eye"></i> Preview</a>
+              <a href="https://github.com/Saksham4554/Parkinson-Disease-Detecting-System" class="ov-btn mag-btn"><i
+                  class="fab fa-github"></i> Code</a>
             </div>
             <span class="proj-num">01</span>
           </div>
@@ -361,7 +366,8 @@
           <div class="proj-img-wrap">
             <img src="coding logo.jpg" alt="Loan Prediction" class="proj-img" />
             <div class="proj-overlay">
-              <a href="https://github.com/Saksham4554/Loan-Status-Predicting-System" class="ov-btn mag-btn"><i class="fab fa-github"></i> Code</a>
+              <a href="https://github.com/Saksham4554/Loan-Status-Predicting-System" class="ov-btn mag-btn"><i
+                  class="fab fa-github"></i> Code</a>
             </div>
             <span class="proj-num">02</span>
           </div>
@@ -398,7 +404,8 @@
           <div class="proj-img-wrap">
             <img src="project2.png" alt="Sales Dashboard" class="proj-img" />
             <div class="proj-overlay">
-              <a href="https://github.com/Saksham4554/Fruit-Price-And-Arrival-Analysis-Dashboard" class="ov-btn mag-btn"><i class="fab fa-github"></i> Code</a>
+              <a href="https://github.com/Saksham4554/Fruit-Price-And-Arrival-Analysis-Dashboard"
+                class="ov-btn mag-btn"><i class="fab fa-github"></i> Code</a>
             </div>
             <span class="proj-num">03</span>
           </div>
@@ -435,90 +442,99 @@
 
 
   <!-- ===== EDUCATION ===== -->
-   <section id="education" class="section rs">
-  <div class="container">
-    <div class="sec-label"><span>04</span> Education</div>
-    <h2 class="sec-heading">My <em>Journey</em></h2>
+  <section id="education" class="section rs">
+    <div class="container">
+      <div class="sec-label"><span>04</span> Education</div>
+      <h2 class="sec-heading">My <em>Journey</em></h2>
 
-    <div class="edu-timeline">
-      <div class="tl-track"></div>
+      <div class="edu-timeline">
+        <div class="tl-track"></div>
 
-      <!-- ================= B.TECH ================= -->
-      <div class="tl-item tilt-card">
-        <div class="tl-dot"><i class="fas fa-university"></i></div>
+        <!-- ================= B.TECH ================= -->
+        <div class="tl-item tilt-card">
+          <div class="tl-dot"><i class="fas fa-university"></i></div>
 
-        <div class="tl-card glass-card">
-          <div class="tl-header">
-            <div class="tl-left">
-              <div class="tl-date">2023 – 2027</div>
-              <h3>B.Tech — Computer Science & Engineering</h3>
-              <p>Lovely Professional University</p>
+          <div class="tl-card glass-card">
+            <div class="tl-header">
+              <div class="tl-left">
+                <div class="tl-date">2023 – 2027</div>
+                <h3>B.Tech — Computer Science & Engineering</h3>
+                <p class="tl-university">Lovely Professional University</p>
+                <p class="tl-loc">
+                  <i class="fas fa-map-marker-alt"></i> Jalandhar,Punjab
+                </p>
+              </div>
+
+              <div class="tl-cgpa">
+                <span class="cgpa-label">CGPA</span>
+                <span class="cgpa-value">8.13</span>
+              </div>
             </div>
 
-            <div class="tl-cgpa">
-              <span class="cgpa-label">CGPA</span>
-              <span class="cgpa-value">8.13</span>
-            </div>
-          </div>
-
-          <div class="tl-chips">
-            <span>Data Structures</span>
-            <span>Machine Learning</span>
-            <span>Databases</span>
-            <span>Algorithms</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ================= 12th ================= -->
-      <div class="tl-item tilt-card">
-        <div class="tl-dot"><i class="fas fa-flask"></i></div>
-
-        <div class="tl-card glass-card">
-          <div class="tl-header">
-            <div class="tl-left">
-              <div class="tl-date">2022 – 2023</div>
-              <h3>Senior Secondary</h3>
-              <p>DAV Public School</p>
-            </div>
-
-            <div class="tl-cgpa">
-              <span class="cgpa-label">Percentage</span>
-              <span class="cgpa-value">78%</span>
-            </div>
-          </div>
-
-          <div class="tl-chips">
-            <span>Physics</span>
-            <span>Chemistry</span>
-            <span>Math</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ================= 10th ================= -->
-      <div class="tl-item tilt-card">
-        <div class="tl-dot"><i class="fas fa-school"></i></div>
-
-        <div class="tl-card glass-card">
-          <div class="tl-header">
-            <div class="tl-left">
-              <div class="tl-date">2020 – 2021</div>
-              <h3>Matriculation</h3>
-              <p>DAV Public School</p>
-            </div>
-
-            <div class="tl-cgpa">
-              <span class="cgpa-label">Percentage</span>
-              <span class="cgpa-value">84%</span>
+            <div class="tl-chips">
+              <span>Data Structures</span>
+              <span>Machine Learning</span>
+              <span>Databases</span>
+              <span>Algorithms</span>
             </div>
           </div>
         </div>
-      </div>
 
+        <!-- ================= 12th ================= -->
+        <div class="tl-item tilt-card">
+          <div class="tl-dot"><i class="fas fa-flask"></i></div>
+
+          <div class="tl-card glass-card">
+            <div class="tl-header">
+              <div class="tl-left">
+                <div class="tl-date">2022 – 2023</div>
+                <h3>Senior Secondary</h3>
+                <p class="tl-university">DAV Public School</p>
+                <p class="tl-loc">
+                  <i class="fas fa-map-marker-alt"></i> Narwana, Haryana
+                </p>
+              </div>
+
+              <div class="tl-cgpa">
+                <span class="cgpa-label">Percentage</span>
+                <span class="cgpa-value">78%</span>
+              </div>
+            </div>
+
+            <div class="tl-chips">
+              <span>Physics</span>
+              <span>Chemistry</span>
+              <span>Math</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= 10th ================= -->
+        <div class="tl-item tilt-card">
+          <div class="tl-dot"><i class="fas fa-school"></i></div>
+
+          <div class="tl-card glass-card">
+            <div class="tl-header">
+              <div class="tl-left">
+                <div class="tl-date">2020 – 2021</div>
+                <h3>Matriculation</h3>
+                <p class="tl-university">DAV Public School</p>
+                <p class="tl-loc">
+                  <i class="fas fa-map-marker-alt"></i> Narwana, Haryana
+                </p>
+              </div>
+
+              <div class="tl-cgpa">
+                <span class="cgpa-label">Percentage</span>
+                <span class="cgpa-value">84%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="certifications" class="section rs">
     <div class="container">
@@ -530,7 +546,8 @@
           <div>
             <h4>Chat GPT-4 Prompt Engineering</h4><span>Infosys</span>
           </div>
-          <a href="https://drive.google.com/file/d/10uJMGgNkPgM6-OfePNXrk5P2j8QqbAK-/view?usp=drive_link" target="_blank" class="cert-link">
+          <a href="https://drive.google.com/file/d/10uJMGgNkPgM6-OfePNXrk5P2j8QqbAK-/view?usp=drive_link"
+            target="_blank" class="cert-link">
             <i class="fas fa-paperclip"></i>
           </a>
         </div>
@@ -539,7 +556,8 @@
           <div>
             <h4>Job Ready Data Science Course</h4><span>CodeWithHarry</span>
           </div>
-          <a href="https://www.codewithharry.com/courses/the-ultimate-job-ready-data-science-course/certificate" target="_blank" class="cert-link">
+          <a href="https://www.codewithharry.com/courses/the-ultimate-job-ready-data-science-course/certificate"
+            target="_blank" class="cert-link">
             <i class="fas fa-paperclip"></i>
           </a>
         </div>
@@ -548,7 +566,8 @@
           <div>
             <h4>Cloud Computing</h4><span>NPTEL</span>
           </div>
-          <a href="https://drive.google.com/file/d/1mijAMKNqaIlXPUXx61HB1lI5McPPQMR5/view?usp=drive_link" target="_blank" class="cert-link">
+          <a href="https://drive.google.com/file/d/1mijAMKNqaIlXPUXx61HB1lI5McPPQMR5/view?usp=drive_link"
+            target="_blank" class="cert-link">
             <i class="fas fa-paperclip"></i>
           </a>
         </div>
@@ -557,7 +576,8 @@
           <div>
             <h4>TCP/IP Advance Topics</h4><span>Coursera</span>
           </div>
-          <a href="https://www.coursera.org/account/accomplishments/certificate/TFROQSYIRJFO" target="_blank" class="cert-link">
+          <a href="https://www.coursera.org/account/accomplishments/certificate/TFROQSYIRJFO" target="_blank"
+            class="cert-link">
             <i class="fas fa-paperclip"></i>
           </a>
         </div>
@@ -566,7 +586,8 @@
           <div>
             <h4>Computational Therory</h4><span>Infosys</span>
           </div>
-          <a href="https://drive.google.com/file/d/1P87FaXFGQHtKaIEHoDkEy08GivmBHT7C/view?usp=drive_link" target="_blank" class="cert-link">
+          <a href="https://drive.google.com/file/d/1P87FaXFGQHtKaIEHoDkEy08GivmBHT7C/view?usp=drive_link"
+            target="_blank" class="cert-link">
             <i class="fas fa-paperclip"></i>
           </a>
         </div>
@@ -575,7 +596,8 @@
           <div>
             <h4>Packet Switching Networks And Algorithms</h4><span>Coursera</span>
           </div>
-          <a href="https://www.coursera.org/account/accomplishments/certificate/KQ9YZKR867O7" target="_blank" class="cert-link">
+          <a href="https://www.coursera.org/account/accomplishments/certificate/KQ9YZKR867O7" target="_blank"
+            class="cert-link">
             <i class="fas fa-paperclip"></i>
           </a>
         </div>
@@ -641,7 +663,8 @@
             </a>
             <a href="https://www.linkedin.com/in/itssaksham" target="_blank" class="c-link glass-card mag-btn">
               <div class="c-ico"><i class="fab fa-linkedin"></i></div>
-              <div><span class="c-lbl">LinkedIn</span><span class="c-val">https://www.linkedin.com/in/itssaksham</span></div>
+              <div><span class="c-lbl">LinkedIn</span><span class="c-val">https://www.linkedin.com/in/itssaksham</span>
+              </div>
               <i class="fas fa-arrow-right c-arr"></i>
             </a>
           </div>
@@ -687,7 +710,7 @@
 
   <button class="back-top" id="backTop"><i class="fas fa-chevron-up"></i></button>
 
-  <script src="script.js"></script>
+  <script src="j1.js"></script>
 </body>
 
 </html>
