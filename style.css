@@ -246,8 +246,6 @@ body.light .tl-loc {
   background: rgba(0, 245, 212, 0.08);
   color: var(--cyan);
 }
-
-/* ──────────────────── RESET ──────────────────── */
 *,
 *::before,
 *::after {
