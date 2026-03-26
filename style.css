@@ -2440,6 +2440,7 @@ body.light .hud-green {
   .navbar {
     top: 0;
     width: 100%;
+    left: 0;
     border-radius: 0;
   }
 
@@ -2469,7 +2470,7 @@ body.light .hud-green {
     font-size: 14px;
   }
   .nav-right {
-    gap: 8px;
+    gap: 6px;
   }
 
   .theme-dropdown {
@@ -2484,7 +2485,6 @@ body.light .hud-green {
 
   .mode-btn {
     padding: 6px 10px;
-    font-size: 12px;
   }
   .about-stats {
     grid-template-columns: repeat(3, 1fr)
