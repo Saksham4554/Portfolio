@@ -1221,7 +1221,8 @@ body.light .hud-green {
 
 .container {
   max-width: 1100px;
-  margin: auto
+  margin: auto;
+  padding: 0 15px;
 }
 
 
@@ -1578,7 +1579,7 @@ body.light .hud-green {
 /* ──────────────────── PROJECTS ──────────────────── */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
@@ -2434,9 +2435,15 @@ body.light .hud-green {
 
 @media(max-width:768px) {
   .section {
-    padding: 60px 15%;
+    padding: 60px 16px;
   }
+  .nav-logo {
+  font-size: 14px;
+}
 
+.nav-right {
+  gap: 4px;
+}
   .navbar {
     top: 0;
     width: 100%;
