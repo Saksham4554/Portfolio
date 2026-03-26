@@ -19,6 +19,9 @@
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --t: 0.35s;
 }
+html {
+  overflow-x: hidden;
+}
 
 .mode-btn {
   background: rgba(3, 0, 20, 0.7);
@@ -194,13 +197,6 @@ body.light .tl-loc {
 .theme-switch select:hover {
   border-color: var(--cyan);
   box-shadow: 0 0 10px rgba(0, 245, 212, 0.2);
-}
-
-.theme-dropdown {
-  position: relative;
-  top: 20px;
-  right: 30px;
-  z-index: 10000;
 }
 
 .theme-selected {
@@ -2497,11 +2493,6 @@ body.light .hud-green {
   .hero-card {
     width: 220px;
     height: 280px;
-  }
-
-  .profile-img-wrap {
-    width: 120px;
-    height: 120px;
   }
 
   .profile-ring-outer {
